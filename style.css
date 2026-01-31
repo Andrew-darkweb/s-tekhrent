@@ -1,0 +1,468 @@
+:root {
+    --primary-color: #ffffff;
+    --secondary-color: #FFD700;
+    --accent-color: #000000;
+    --text-color: #333333;
+    --light-gray: #f5f5f5;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--primary-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header стили */
+header {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo i {
+    color: var(--secondary-color);
+    font-size: 32px;
+}
+
+.logo-text h1 {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.logo-text p {
+    color: #ccc;
+    font-size: 14px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+nav a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+    font-size: 18px;
+}
+
+nav a:hover {
+    color: var(--secondary-color);
+}
+
+.contact-info {
+    text-align: right;
+}
+
+.contact-info .phone {
+    font-size: 22px;
+    font-weight: bold;
+    color: var(--secondary-color);
+    margin-bottom: 5px;
+}
+
+.contact-info .work-hours {
+    font-size: 14px;
+    color: #ccc;
+}
+
+/* Hero секция */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/imgs/hero-img.jpg');
+    background-size: cover;
+    background-position: center;
+    color: var(--primary-color);
+    text-align: center;
+    padding: 100px 0;
+    margin-bottom: 60px;
+}
+
+.hero h2 {
+    font-size: 42px;
+    margin-bottom: 20px;
+    color: var(--secondary-color);
+}
+
+.hero p {
+    font-size: 20px;
+    max-width: 800px;
+    margin: 0 auto 30px;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: var(--accent-color);
+    padding: 15px 40px;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    transition: all 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #ffed4e;
+    transform: translateY(-3px);
+}
+
+/* Основной контент */
+.main-title {
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--accent-color);
+}
+
+.main-title h2 {
+    font-size: 36px;
+    margin-bottom: 15px;
+    position: relative;
+    display: inline-block;
+}
+
+.main-title h2:after {
+    content: '';
+    position: absolute;
+    width: 60%;
+    height: 3px;
+    background-color: var(--secondary-color);
+    bottom: -10px;
+    left: 20%;
+}
+
+/* Карточки техники */
+.equipment-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.equipment-card {
+    background-color: var(--primary-color);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.equipment-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.card-image {
+    height: 200px;
+    overflow: hidden;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.equipment-card:hover .card-image img {
+    transform: scale(1.05);
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card-content h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: var(--accent-color);
+}
+
+.card-price {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+}
+
+.card-description {
+    color: #666;
+    margin-bottom: 20px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.card-button {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.card-button:hover {
+    background-color: #333;
+}
+
+/* Карта */
+.map-section {
+    margin-bottom: 60px;
+}
+
+.map-container {
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+    height: 400px;
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+}
+
+/* Детальная страница (скрыта по умолчанию) */
+.detail-page {
+    display: none;
+    padding: 40px 0;
+}
+
+.detail-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.back-button {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.3s;
+}
+
+.back-button:hover {
+    background-color: #333;
+}
+
+.detail-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.detail-image {
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+}
+
+.detail-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.detail-info h3 {
+    font-size: 32px;
+    margin-bottom: 15px;
+    color: var(--accent-color);
+}
+
+.detail-price {
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+}
+
+.detail-description {
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.specifications {
+    background-color: var(--light-gray);
+    padding: 20px;
+    border-radius: var(--border-radius);
+}
+
+.specifications h4 {
+    margin-bottom: 15px;
+    color: var(--accent-color);
+}
+
+.specifications ul {
+    list-style: none;
+}
+
+.specifications li {
+    padding: 8px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.specifications li:last-child {
+    border-bottom: none;
+}
+
+.detail-map {
+    margin-bottom: 60px;
+}
+
+/* Footer */
+footer {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    padding: 40px 0;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+}
+
+.footer-column h3 {
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+    font-size: 22px;
+}
+
+.footer-column p,
+.footer-column a {
+    color: #ccc;
+    margin-bottom: 10px;
+    display: block;
+    text-decoration: none;
+}
+
+.footer-column a:hover {
+    color: var(--primary-color);
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-icons a {
+    background-color: #333;
+    color: var(--primary-color);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+}
+
+.social-icons a:hover {
+    background-color: var(--secondary-color);
+    color: var(--accent-color);
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 30px;
+    margin-top: 30px;
+    border-top: 1px solid #333;
+    color: #999;
+    font-size: 14px;
+}
+
+/* Адаптивность */
+@media (max-width: 992px) {
+    .detail-content {
+        grid-template-columns: 1fr;
+    }
+
+    .header-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    nav ul {
+        gap: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .equipment-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+
+    .hero h2 {
+        font-size: 32px;
+    }
+
+    .hero p {
+        font-size: 18px;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .equipment-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        padding: 60px 0;
+    }
+
+    .hero h2 {
+        font-size: 28px;
+    }
+}

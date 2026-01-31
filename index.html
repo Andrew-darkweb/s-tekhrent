@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Аренда спецтехники в Москве и Московской области</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="/imgs/logo.png   " type="png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-truck-monster"></i>
+                    <div class="logo-text">
+                        <h1>СпецТехАренда</h1>
+                        <p>Москва и Московская область</p>
+                    </div>
+                </div>
+                
+                <nav>
+                    <ul>
+                        <li><a href="#home">Главная</a></li>
+                        <li><a href="#equipment">Техника</a></li>
+                        <li><a href="#about">О нас</a></li>
+                        <li><a href="#contacts">Контакты</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="contact-info">
+                    <div class="phone">+7 (916) 223 98-86</div>
+                    <div class="work-hours">Пн-Вс: 8:00-22:00</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Главная страница -->
+    <section id="home" class="main-page">
+        <!-- Hero секция -->
+        <div class="hero">
+            <div class="container">
+                <h2>Аренда спецтехники в Москве и МО</h2>
+                <p>Профессиональная спецтехника для любых задач. Современный парк оборудования с опытными операторами. Доставка на объект.</p>
+                <a href="#equipment" class="cta-button">Посмотреть технику</a>
+            </div>
+        </div>
+
+        <div class="container">
+            <!-- Карточки техники -->
+            <div id="equipment" class="main-title">
+                <h2>Наша спецтехника</h2>
+                <p>Выберите технику для аренды</p>
+            </div>
+            
+            <div class="equipment-grid">
+                <!-- Карточки будут сгенерированы JavaScript -->
+            </div>
+            
+            <!-- Карта -->
+            <div class="map-section">
+                <div class="main-title">
+                    <h2>Зона работы</h2>
+                    <p>Работаем по Москве и Московской области</p>
+                </div>
+                
+                <div class="map-container">
+                    <div id="map"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Детальная страница (скрыта по умолчанию) -->
+    <section id="detail" class="detail-page">
+        <div class="container">
+            <div class="detail-header">
+                <a href="#" class="back-button" id="backButton">
+                    <i class="fas fa-arrow-left"></i> Назад к каталогу
+                </a>
+                <h2 id="detailTitle">Детальная информация</h2>
+            </div>
+            
+            <div class="detail-content">
+                <div class="detail-image">
+                    <img id="detailImage" src="" alt="">
+                </div>
+                
+                <div class="detail-info">
+                    <h3 id="detailName">Название техники</h3>
+                    <div class="detail-price" id="detailPrice">Цена</div>
+                    <div class="detail-description" id="detailDescription">
+                        Описание техники будет здесь
+                    </div>
+                    
+                    <div class="specifications">
+                        <h4>Характеристики:</h4>
+                        <ul id="detailSpecs">
+                            <!-- Спецификации будут добавлены через JS -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="detail-map">
+                <div class="main-title">
+                    <h3>Местоположение техники</h3>
+                </div>
+                <div class="map-container">
+                    <div id="detailMap"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contacts">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Контакты</h3>
+                    <p><i class="fas fa-phone-alt"></i> +7 (495) 123-45-67</p>
+                    <p><i class="fas fa-envelope"></i> info@spectearend.ru</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Москва, ул. Строителей, 15</p>
+                    <p><i class="fas fa-clock"></i> Пн-Вс: 8:00-22:00</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Услуги</h3>
+                    <a href="#">Аренда спецтехники</a>
+                    <a href="#">Услуги операторов</a>
+                    <a href="#">Доставка техники</a>
+                    <a href="#">Консультации</a>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Социальные сети</h3>
+                    <p>Следите за нами в соцсетях</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-vk"></i></a>
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 СпецТехАренда. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
