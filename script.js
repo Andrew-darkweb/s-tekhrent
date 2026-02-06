@@ -12,13 +12,13 @@
             },
             {
                 id: 2,
-                name: "Илосос MAN",
+                name: "Илосос DAF",
                 price: "3600₽/час",
                 image: "imgs/MAN1.jpg",
-                description: "Илососная машина на базе MAN для очистки колодцев, отстойников и канализационных систем. Высокая производительность и эффективность.",
+                description: "Илососная машина на базе DAF для очистки колодцев, отстойников и канализационных систем. Высокая производительность и эффективность.",
                 detailedDescription: "Илососная машина на шасси MAN с цистерной объемом 12 м³ и вакуумным насосом. Предназначена для очистки колодцев, отстойников, канализационных систем, септиков и других емкостей от ила, шлама и жидких отходов. Оснащена системой гидравлического управления и дополнительным оборудованием для промывки.",
                 specs: ["Объем цистерны: 12 м³", "Длина шланга: 30 м", "Глубина очистки: до 10 м", "Шасси: MAN TGS", "Мощность: 360 л.с."],
-                coordinates: [55.805039, 38.024548]
+                coordinates: [55.805039, 38.024548] 
             },
             {
                 id: 3,
@@ -106,7 +106,7 @@ function initMainMap() {
         .bindPopup('<b>Фронт. погрузчик XCMG</b>')
     L.marker([55.808374, 38.025784])
         .addTo(mainMap)
-        .bindPopup('<b>Илосос MAN</b>')
+        .bindPopup('<b>Илосос DAF</b>')
     L.marker([55.80481, 38.022782])
         .addTo(mainMap)
         .bindPopup('<b>Канало промывочная машина MAN</b>')
@@ -128,16 +128,15 @@ function initDetailMap() {
     if (detailMap) {
         detailMap.remove();
     }
-    
-    detailMap = L.map('detailMap').setView(item.coordinates, 14);
-    
+    detailMap = L.map('detailMap').setView(equipmentData.coordinates, 14);
+    console.log(detailMap)
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '© OpenStreetMap contributors'
     }).addTo(detailMap);
     
-    L.marker(item.coordinates)
+    L.marker(equipmentData.coordinates)
         .addTo(detailMap)
-        .bindPopup(`<b>Местоположение техники</b>`)
+        .bindPopup(`<b>${equipmentData.name}</b>`)
         .openPopup();
 }
 
@@ -197,18 +196,15 @@ function showDetailPage(id) {
         specsList.appendChild(li);
     });
     // Инициализируем карту для детальной страницы
-    function initDetailMap(coordinates) {
-    if (detailMap) {
-        detailMap.remove();
-    }
-    
+    initDetailMap(item)
+console.log(detailMap)
     // Убедимся, что контейнер карты видим
-    const detailMapContainer = document.getElementById('detailMap');
+    const detailMapContainer = document.getElementById('map');
     if (detailMapContainer) {
         detailMapContainer.style.height = '600px';
         detailMapContainer.style.width = '100%';
         
-        detailMap = L.map('detailMap').setView(item.coordinates, 17);
+        detailMap = L.map('map').setView(item.coordinates, 17);
         
         L.tileLayer({
             attribution: '© OpenStreetMap contributors'
@@ -224,7 +220,6 @@ function showDetailPage(id) {
             detailMap.invalidateSize();
         }, 100);
     }
-}
 
     
     // Переключаем видимость страниц
